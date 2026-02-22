@@ -1,0 +1,538 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: Clash;
+  src: url(fonts/ClashDisplay-Bold.otf);
+  font-weight: 700;
+}
+@font-face {
+  font-family: Clash;
+  src: url(fonts/ClashDisplay-Semibold.otf);
+  font-weight: 600;
+}
+@font-face {
+  font-family: Clash;
+  src: url(fonts/ClashDisplay-Regular.otf);
+  font-weight: 500;
+}
+@font-face {
+  font-family: Clash;
+  src: url(fonts/ClashDisplay-Regular.otf);
+  font-weight: 400;
+}
+
+html, body {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: #0f0f0f;
+  color: rgba(255, 255, 255, 0.9);
+  font-family: "Clash", sans-serif;
+  font-weight: 400;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 3vw 5vw;
+  align-items: center;
+}
+
+p {
+  font-size: 18px;
+  font-family: "Clash", sans-serif;
+  font-weight: 500;
+}
+
+h2 {
+  font-family: "Clash", sans-serif;
+  font-weight: 600;
+  font-size: 7vw;
+}
+
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 8px 8px 20px;
+  border-radius: 40px;
+  font-size: 15px;
+  border: none;
+  outline: none;
+}
+
+i {
+  font-size: 15px;
+  border-radius: 100%;
+  padding: 5px;
+}
+
+section {
+  padding: 20px;
+}
+
+.Gradient {
+  position: relative;
+  width: 100%;
+  min-height: 600px; /* Ou a altura que desejar */
+  border-radius: 40px;
+  background: #0f0f0f; /* Fundo base escuro */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 4vw;
+  overflow: hidden; /* Corta as ondas que saem da borda */
+  z-index: 1;
+}
+
+/* Criamos as "ondas" usando pseudo-elementos ::before e ::after */
+.Gradient::before,
+.Gradient::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  opacity: 0.6;
+  z-index: -1; /* Fica atrás do seu texto */
+}
+
+/* Primeira onda: Vermelho Vibrante */
+.Gradient::before {
+  background: radial-gradient(circle at 30% 30%, #e10600 0%, transparent 40%),
+              radial-gradient(circle at 70% 60%, #3a0000 0%, transparent 40%);
+  animation: movimentoOrganico 12s linear infinite;
+  filter: blur(60px); /* Suaviza para parecer gás/líquido */
+}
+
+/* Segunda onda: Vermelho Profundo */
+.Gradient::after {
+  background: radial-gradient(circle at 60% 20%, #ca0802 0%, transparent 45%),
+              radial-gradient(circle at 20% 80%, #0f0f0f 0%, transparent 50%);
+  animation: movimentoOrganico 18s linear infinite reverse;
+  filter: blur(80px);
+}
+
+/* Animação que simula a distorção do After Effects */
+@keyframes movimentoOrganico {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  33% {
+    transform: rotate(120deg) scale(1.2) translateY(5%);
+  }
+  66% {
+    transform: rotate(240deg) scale(0.8) translateX(5%);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+.seta {
+  width: 100px;
+}
+
+.titleBlend {
+  color: rgb(218, 218, 218);
+  mix-blend-mode: color-dodge;
+}
+
+.sec1 {
+  .Arthur {
+    margin-bottom: 32px;
+    padding: 14px 20px;
+    display: flex;
+    gap: 12px;
+    border-radius: 56px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    background: linear-gradient(
+      150deg,
+      rgba(209, 103, 255, 0.04) 22.41%,
+      rgba(209, 103, 255, 0.2) 85.65%
+    );
+    box-shadow: 0 -4px 8px 0 rgba(255, 255, 255, 0.1) inset,
+      0 4px 8px 0 rgba(255, 255, 255, 0.04) inset;
+    backdrop-filter: blur(20.450000762939453px);
+
+    h1 {
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: default;
+}
+
+.Arthur:hover {
+  /* 1. Transforma levemente a escala e sobe o selo */
+  transform: translateY(-4px) scale(1.02);
+  
+  /* 2. Intensifica o brilho da borda e do fundo */
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+  background: linear-gradient(
+    150deg,
+    rgba(225, 6, 0, 0.1) 22.41%, /* Puxando o vermelho do tema */
+    rgba(225, 6, 0, 0.25) 85.65%
+  );
+
+  /* 3. Adiciona um glow externo sutil que combina com o fundo */
+  box-shadow: 0 -4px 8px 0 rgba(255, 255, 255, 0.2) inset,
+              0 4px 8px 0 rgba(255, 255, 255, 0.1) inset,
+              0 10px 25px -5px rgba(225, 6, 0, 0.3);
+}
+
+/* Efeito na Estrela (ajuste conforme a tag que usou) */
+.Arthur:hover span {
+  filter: drop-shadow(0 0 8px #fff);
+  animation: starPulse 1.5s infinite;
+}
+
+@keyframes starPulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.2); opacity: 0.7; }
+  100% { transform: scale(1); opacity: 1; }
+  }
+
+  h2 {
+    font-size: 7vw;
+    line-height: 1.1;
+  }
+
+  .tec {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+
+    p {
+      width: 240px;
+    }
+  }
+
+  .seta {
+    width: 60px;
+    margin: 40px 0;
+  }
+}
+
+.logos {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2vw 5.4vw;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.logos div {
+  flex: 1 1 120px;
+  display: flex;
+  justify-content: center;
+}
+
+.logos img {
+  max-width: 100px;
+  height: auto;
+  opacity: 0.7;
+}
+
+.sec2 {
+  display: flex;
+
+  .Gradient {
+    background: radial-gradient(
+      114.84% 100% at 50% 100%,
+      #0f0f0f 42.14%,
+      #e10600 66.11%,
+      #ca0802bb 100%
+    );
+    flex-direction: row;
+    align-items: stretch;
+    padding: 120px 4vw 120px 4vw;
+  }
+
+  .esquerda {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: start;
+    width: 280px;
+    margin-right: 60px;
+
+    h2 {
+      font-size: 7vw;
+      position: absolute;
+      top: 0;
+    }
+
+    p {
+      margin-bottom: 20px;
+      margin-top: 220px;
+    }
+
+    
+  }
+
+  .direita {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+
+    .Deg {
+      background: linear-gradient(
+        263deg,
+        rgba(255, 255, 255, 0.2) 3.87%,
+        rgba(255, 255, 255, 0) 97.72%
+      );
+    }
+
+    .card {
+      width: calc(33.333% - 10px);
+      border-radius: 32px;
+      padding: 30px 25px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      background: rgba(255, 255, 255, 0.07);
+      transform: translateY(-5px);
+    }
+    
+    .card i {
+      font-size: 24px;
+      background: rgba(225, 6, 0, 0.1);
+      color: #e10600;
+      width: fit-content;
+      padding: 12px;
+    }
+
+    .card h3 {
+      font-size: 1.5vw;
+      margin: 0;
+    }
+
+    .card p {
+      font-size: 16px;
+      opacity: 0.7;
+    }
+  }
+}
+
+.sec3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 100px 5vw;
+
+  h2 {
+    margin-bottom: 50px;
+  }
+
+  .trabalhos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    width: 100%;
+    
+
+    img {
+      width: 100%;
+      filter: saturate(0);
+      transition: all 0.3s ease;
+    }
+
+    img:hover {
+      filter: saturate(1);
+    }
+  }
+}
+
+.sec4 {
+  position: relative;
+
+  .setinha {
+    position: absolute;
+    top: 0;
+    right: 30%;
+    font-size: 2vw;
+    rotate: calc(25deg);
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .botoes {
+    display: flex;
+    position: absolute;
+    bottom: 120px;
+    right: 4vw;
+    gap: 24px;
+
+    .orcamento {
+      background-color: rgba(0, 0, 0, 0.8);
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .contato {
+      background-color: rgba(255, 255, 255, 0.257);
+      color: rgba(255, 255, 255, 0.8);
+    }
+  }
+
+  .Gradient {
+    padding: 120px 4vw 120px;
+    background: radial-gradient(
+      125.31% 94.09% at 67.53% 17.57%,
+      #0f0f0f 34.21%,
+      #e10600 65.24%,
+      #ca0802bb 100%
+    );
+  }
+
+  h2 {
+    font-size: 7vw;
+    max-width: 800px;
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .sec2 .direita .card h3 {
+    font-size: 20px;
+  }
+  
+  .sec4 h2 {
+    font-size: 8vw;
+  }
+}
+
+
+/* Media Queries */
+@media (max-width: 1024px) {
+  h2 {
+    font-size: 8vw;
+  }
+  
+  .sec2 .esquerda h2 {
+    font-size: 8vw;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 20px 5vw;
+  }
+
+  header button {
+    padding: 6px 15px;
+    font-size: 14px;
+  }
+
+  .sec1 .Arthur {
+    margin-bottom: 20px;
+  }
+
+  .sec1 .tec {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    margin-top: 20px;
+  }
+
+  .sec1 .tec p {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .sec2 {
+    flex-direction: column;
+
+    .Gradient {
+      flex-direction: column;
+      padding: 60px 5vw;
+    }
+
+    .esquerda {
+      width: 100%;
+      margin: 0 0 40px 0;
+      justify-content: flex-start;
+
+      h2 {
+        position: static;
+        margin-bottom: 20px;
+        font-size: 10vw;
+      }
+
+      p {
+        margin-top: 0;
+      }
+    }
+
+    .direita {
+      .card {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  .sec3 .trabalhos {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .sec4 .botoes {
+    position: static;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 40px;
+    width: 100%;
+  }
+
+  .sec4 .botoes button {
+    width: 100%;
+  }
+
+  .sec4 .setinha {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    padding: 15px 4vw;
+  }
+
+  header img {
+    height: 30px;
+  }
+
+  h2 {
+    font-size: 12vw;
+  }
+
+  .sec1 .tec h2 {
+    font-size: 12vw;
+  }
+
+  .sec3 .trabalhos {
+    grid-template-columns: 1fr;
+  }
+
+  .sec4 h2 {
+    font-size: 12vw;
+  }
+}
