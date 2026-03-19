@@ -1,8 +1,8 @@
 # 💻 My Portfolio
 
-![License](https://img.shields.io/github/license/seu-usuario/seu-repositorio?style=flat-square)
-![Main Language](https://img.shields.io/github/languages/top/seu-usuario/seu-repositorio?style=flat-square)
-![Repo Size](https://img.shields.io/github/repo-size/seu-usuario/seu-repositorio?style=flat-square)
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-%23F7DF1E.svg?style=for-the-badge&logo=javascript&logoColor=black)
 
 Currículo profissional interativo e responsivo, desenvolvido para centralizar meus projetos, habilidades e trajetórias no ecossistema Front-End.
 
